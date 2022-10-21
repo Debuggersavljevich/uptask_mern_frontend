@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
 import React from 'react'
 
 const Login = () => {
   return (
+    
     <>
       <h1 className='text-sky-600 font-black text-6xl capitalize'>Inicia sesión para administrar tus {''}
         <span className='text-slate-700'>proyectos</span>
@@ -21,6 +23,16 @@ const Login = () => {
         <input type="submit" value="Iniciar Sesión" className='bg-sky-700 w-full mb-5 py-3 text-white uppercase font-bold rounded-xl hover:cursor-pointer hover:bg-sky-800 transition-all' />
 
       </form>
+
+      <nav className='lg:flex lg:justify-between'>
+        <Link to="registrar" className='block text-center my-5 text-slate-500 uppercase text-sm'>
+          ¿No tienes una cuenta? Registrate gratis
+        </Link>
+        
+        <Link to="olvide-password" className='block text-center my-5 text-slate-500 uppercase text-sm'>
+          Olvidé mi password
+        </Link>
+      </nav>
     </>
   )
 }
