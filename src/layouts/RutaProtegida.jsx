@@ -4,12 +4,18 @@ import useAuth from '../hooks/useAuth'
 
 const RutaProtegida = () => {
 
-    const [auth, setAuth] = useAuth()
+    const {auth, cargando} = useAuth()
 
-    console.log(auth);
+    // console.log(auth);
+
+    if(cargando){
+      return 'Cargando...'
+    }
 
     return (
-    <div>RutaProtegida</div>
+    <>
+      {auth._id ? <Outlet/> : <Navigate to="/" />}
+    </>
   )
 }
 
