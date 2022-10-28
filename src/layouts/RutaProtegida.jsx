@@ -1,6 +1,9 @@
 import React from 'react'
 import { Outlet, Navigate } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
+import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
+import Loader from '../components/Loader'
 
 const RutaProtegida = () => {
 
@@ -9,12 +12,28 @@ const RutaProtegida = () => {
     // console.log(auth);
 
     if(cargando){
-      return 'Cargando...'
+      return <Loader/>
     }
 
     return (
     <>
-      {auth._id ? <Outlet/> : <Navigate to="/" />}
+      {auth._id ? (
+        <div className='bg-gray-100'>
+
+          <Header />
+
+          <div className='md:flex md:min-h-scren'>
+
+            <Sidebar />
+            
+            <main className='p-10 flex-1'>
+              <Outlet />
+            </main>
+          
+          </div>
+        </div>
+      )  : <Navigate to="/" />}
+      
     </>
   )
 }
