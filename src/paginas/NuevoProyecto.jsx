@@ -1,4 +1,5 @@
 import React from 'react'
+import FormularioProyecto from '../components/FormularioProyecto'
 
 const NuevoProyecto = () => {
   return (
@@ -9,8 +10,8 @@ const NuevoProyecto = () => {
       Nuevo Proyecto
     </h1>
 
-    <div>
-      
+    <div className='mt-10 flex justify-center '>
+      <FormularioProyecto></FormularioProyecto>
     </div>
     
     </>

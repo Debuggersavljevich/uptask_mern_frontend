@@ -1,6 +1,10 @@
 import React from 'react'
+import useProyectos from '../hooks/useProyectos'
 
 const Proyectos = () => {
+  
+  const {proyectos} = useProyectos()
+
   return (
     <>
     

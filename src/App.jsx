@@ -12,12 +12,14 @@ import NuevoProyecto from './paginas/NuevoProyecto'
 
 import useAuth from './hooks/useAuth'
 import {AuthProvider} from './context/AuthProvider'
+import {ProyectosProvider} from './context/ProyectosProvider'
 
 function App() {
 
   return (
     <BrowserRouter>
       <AuthProvider>
+        <ProyectosProvider>
         <Routes>
           <Route path='/' element={<AuthLayout/>}>
           
@@ -36,6 +38,7 @@ function App() {
           </Route>
 
         </Routes> 
+      </ProyectosProvider>
       </AuthProvider>
     </BrowserRouter>
     )
