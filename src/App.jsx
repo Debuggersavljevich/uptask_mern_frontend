@@ -8,7 +8,7 @@ import ConfirmarCuenta from './paginas/ConfirmarCuenta'
 import Proyectos from './paginas/Proyectos'
 import RutaProtegida from './layouts/RutaProtegida'
 import NuevoProyecto from './paginas/NuevoProyecto'
-
+import Proyecto from './paginas/Proyecto'
 
 import useAuth from './hooks/useAuth'
 import {AuthProvider} from './context/AuthProvider'
@@ -35,6 +35,7 @@ function App() {
 
             <Route index element={<Proyectos/>} />
             <Route path='crear-proyecto' element={<NuevoProyecto/>}  />
+            <Route path=':id' element={<Proyecto/>}  />
           </Route>
 
         </Routes> 
