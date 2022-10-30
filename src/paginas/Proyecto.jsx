@@ -1,5 +1,5 @@
 import {useEffect} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import useProyectos from '../hooks/useProyectos'
 import Loader from '../components/Loader'
 
@@ -22,6 +22,8 @@ const Proyecto = () => {
     
     (cargando ? <Loader/>: 
     <div>
+        <Link to='/proyectos' className='font-main underline underline-offset-4 decoration-indigo-500 font-bold'>📁⬅ Proyectos / </Link>
+
         <h1 className='font-black text-4xl'> {nombre} </h1>
     </div>
   

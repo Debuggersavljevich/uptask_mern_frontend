@@ -82,7 +82,7 @@ const Login = () => {
 
       </form>
 
-      <nav className='lg:flex lg:justify-between'>
+      <nav className='lg:flex lg:justify-between underline underline-offset-2'>
         <Link to="registrar" className='block text-center my-5 text-slate-500 uppercase text-sm'>
           ¿No tienes una cuenta? Registrate gratis
         </Link>

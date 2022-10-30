@@ -64,7 +64,7 @@ const Registrar = () => {
 
   return (
     <>
-        <h1 className="text-sky-600 font-black text-6xl capitalize">Crea tu Cuenta y Administra tus {''}
+        <h1 className="text-sky-600 font-black mb-4 text-6xl capitalize">Crea tu Cuenta y Administra tus {''}
             <span className="text-slate-700">proyectos</span>
         </h1>
 
@@ -141,7 +141,7 @@ const Registrar = () => {
             
         </form>
 
-        <nav className="lg:flex lg:justify-between">
+        <nav className="lg:flex lg:justify-between underline underline-offset-2">
             <Link 
                 className='block text-center my-5 text-slate-500 uppercase text-sm'
                 to="/"

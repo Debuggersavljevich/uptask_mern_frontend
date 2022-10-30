@@ -11,11 +11,11 @@ const Proyectos = () => {
   return (
     <>
     
-    <h1 className='text-4xl font-black'>
-      Proyectos
+    <h1 className='text-4xl font-black text-center font-main underline underline-offset-4 decoration-indigo-400'>
+      📁Proyectos
     </h1>
 
-    <div className='bg-white shadow mt-10 rounded-lg  font-bold'>
+    <div className='bg-white shadow-2xl mt-10 rounded-lg  font-bold'>
         {proyectos.length ? 
           proyectos.map(proyecto => (
            <PreviewProyecto 
