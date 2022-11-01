@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
 import useProyectos from "../hooks/useProyectos"
 import Alerta from "./Alerta"
 
@@ -10,7 +11,21 @@ const FormularioProyecto = () => {
   const [fechaEntrega, setFechaEntrega] = useState('')
   const [cliente, setCliente] = useState('')
 
-  const {mostrarAlerta, alerta, submitProyecto} = useProyectos()
+  const {mostrarAlerta, alerta, submitProyecto, proyecto} = useProyectos()
+
+  const params = useParams()
+  useEffect(() => {
+      console.log(params);
+    if(proyecto.nombre){
+        // console.log('editando');
+        setNombre(proyecto.nombre),
+        setDescripcion(proyecto.descripcion),
+        setFechaEntrega(proyecto.fechaEntrega),
+        setCliente(proyecto.cliente)
+
+        console.log(proyecto.fechaEntrega);
+    } 
+  }, [params])
 
   const handleSubmit = async e => {
         e.preventDefault()
