@@ -6,6 +6,7 @@ import Alerta from "./Alerta"
 const FormularioProyecto = () => {
   
   
+  const [id, setId] = useState(null)
   const [nombre, setNombre] = useState('')
   const [descripcion, setDescripcion] = useState('')
   const [fechaEntrega, setFechaEntrega] = useState('')
@@ -16,11 +17,11 @@ const FormularioProyecto = () => {
   const params = useParams()
   useEffect(() => {
       console.log(params);
-    if(proyecto.nombre){
-        // console.log('editando');
+    if(params.id){
+        setId(proyecto._id)
         setNombre(proyecto.nombre),
         setDescripcion(proyecto.descripcion),
-        setFechaEntrega(proyecto.fechaEntrega),
+        setFechaEntrega(proyecto.fechaEntrega?.split('T')[0]),
         setCliente(proyecto.cliente)
 
         console.log(proyecto.fechaEntrega);
@@ -39,8 +40,9 @@ const FormularioProyecto = () => {
         }
         //Pasar los datos
         
-        await submitProyecto({nombre, descripcion, fechaEntrega, cliente})        
+        await submitProyecto({id, nombre, descripcion, fechaEntrega, cliente})        
     
+        setId(null)
         setNombre('')
         setDescripcion('')
         setFechaEntrega('')
@@ -106,7 +108,7 @@ const FormularioProyecto = () => {
                 className='border w-full p-2 mt-2 placeholder-gray-400 rounded-md' />
             </div>
         
-            <input type="submit" value='Crear Proyecto' className="bg-sky-600 w-full p-3 uppercase font-bold text-white rounded-lg cursor-pointer hover:bg-sky-700 transition-colors" />
+            <input type="submit" value={id ? 'Actualizar proyecto' : 'Crear proyecto NUEVO'} className="bg-sky-600 w-full p-3 uppercase font-bold text-white rounded-lg cursor-pointer hover:bg-sky-700 transition-colors" />
         
         </form>
 
