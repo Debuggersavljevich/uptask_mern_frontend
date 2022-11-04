@@ -7,6 +7,7 @@ const ProyectosContext = createContext()
 
 const ProyectosProvider = ({children}) => {
     
+   
     
 
 
@@ -14,6 +15,7 @@ const ProyectosProvider = ({children}) => {
     const [alerta, setAlerta] = useState({})
     const [proyecto, setProyecto] = useState({})
     const [cargando, setCargando] = useState(false)
+    const [modalFormularioTarea, setModalFormularioTarea] = useState(false)
 
     const navigate = useNavigate()
 
@@ -192,6 +194,16 @@ const ProyectosProvider = ({children}) => {
         }
     }
 
+    const handleModalTarea = () => {
+        setModalFormularioTarea(!modalFormularioTarea)
+    }    
+
+
+    const submitTarea = async tarea => {
+        console.log(tarea);
+    }
+
+
     return (
 
 
@@ -204,7 +216,11 @@ const ProyectosProvider = ({children}) => {
                     obtenerProyecto, 
                     proyecto,
                     cargando,
-                    eliminarProyecto}}>
+                    eliminarProyecto,
+                    modalFormularioTarea,
+                    handleModalTarea,
+                    submitTarea
+                    }}>
             
             {children}
         </ProyectosContext.Provider>        
